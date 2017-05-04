@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Model {
-    private static Model instance = new Model();
+    private static Model instance;
     private int wordCount = 0;
     List<String> mList = new LinkedList<String>();
 
@@ -22,6 +22,9 @@ public class Model {
     }
 
     public static Model getInstance() {
+        if(instance == null){
+            instance = new Model();
+        }
         return instance;
     }
 
